@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet"> <!-- Load the custom font -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cedarville Cursive', cursive; /* Set Cedarville Cursive font for body */
+            height: 100vh; /* Set height to full viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Floating message styles */
+        .floating-message {
+            position: fixed;
+            top: 20px; /* Position from the top */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 1.2rem; /* Font size for the floating message */
+            z-index: 3; /* Ensure it's above other content */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 10px; /* Padding for the message */
+            border-radius: 10px; /* Rounded corners */
+            animation: float 3s infinite alternate; /* Floating effect */
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            from {
+                transform: translate(-50%, 0);
+            }
+            to {
+                transform: translate(-50%, -10px);
+            }
+        }
+
+        /* Main greeting styles */
+        .animated-text {
+            font-size: 5vw; /* Adjusted for better responsiveness */
+            opacity: 1; /* Make it visible */
+            transform: translateY(0); /* Set the initial position */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Smaller additional text styles */
+        .additional-message {
+            font-size: 1.5rem; /* Smaller size for additional text */
+            opacity: 1; /* Make it visible */
+            transform: translateY(0); /* Set the initial position */
+            position: relative;
+            z-index: 2;
+            max-width: 800px; /* Limit the width for readability */
+            text-align: center; /* Center align text */
+            margin-top: 20px; /* Space between the greeting and additional message */
+        }
+
+        /* Fullscreen background video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        /* Overlay to darken the video for better readability of text */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .animated-text {
+                font-size: 6vw; /* Adjust size for smaller screens */
+            }
+
+            .additional-message {
+                font-size: 1.2rem; /* Smaller size for additional text */
+            }
+
+            .floating-message {
+                font-size: 1rem; /* Adjust size for floating message */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .animated-text {
+                font-size: 5vw; /* Further adjust for very small screens */
+            }
+
+            .additional-message {
+                font-size: 1rem; /* Further reduce size for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark overlay for readability -->
+    <div class="overlay"></div>
+
+    <!-- Floating message at the top -->
+    <div class="floating-message" id="floatingMessage">Click on the page to interact properly!</div>
+
+    <h1 class="animated-text" id="birthdayGreeting">Happy Birthday Myuuuuuuuuuu3333333</h1>
+
+    <!-- Additional message -->
+    <div class="additional-message" id="additionalMessage">
+        It's a beautiful night...(threw some extra u and m for your birthday). Well, you're 17 now! We both are 17 now I feel relieved 55555. This looks cool right! This was my first time creating something like this so it is not perfect! Tbh I don't really know what to say!! Just watch the background and listen to the music (btw it's in 4k if it lags network issue!!) Let's work hard a lot just a lot cause there's nothing else matter right! Well, looking at this background doesn't it make you feel like the world's a beautiful place?? Indeed it is!
+    </div>
+
+    <!-- Cloudinary video with sound and poster image -->
+    <video controls autoplay loop class="background-video" poster="https://res.cloudinary.com/djxtbg56e/image/upload/v1728234917/poster_image.jpg">
+        <source src="https://res.cloudinary.com/djxtbg56e/video/upload/v1728234917/4K_Beautiful_Anime_Scenery_-_SYNIX.Visuals_1080p60_h264_youtube_diybs8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Function to make the floating message disappear after 10 seconds
+        function hideFloatingMessage() {
+            const floatingMessage = document.getElementById('floatingMessage');
+            setTimeout(() => {
+                floatingMessage.style.opacity = 0; // Fade out the message
+                floatingMessage.style.transition = 'opacity 1s ease'; // Transition for fading out
+            }, 10000); // 10 seconds delay
+        }
+
+        // Start the animations after the page loads
+        window.onload = () => {
+            hideFloatingMessage();
+        };
+    </script>
+
+</body>
+</html>
